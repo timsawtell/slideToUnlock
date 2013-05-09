@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11G63" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="4">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ph5-Lb-1mO">
+                                <rect key="frame" x="348" y="480" width="73" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Show">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showButtonAction:" destination="2" eventType="touchUpInside" id="6sJ-r9-H19"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="view" destination="5" id="TJt-Ew-1lm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Slide To Unlock View Controller-->
+        <scene sceneID="FmE-Xq-fYn">
+            <objects>
+                <viewController storyboardIdentifier="slideToUnlockVC" autoresizesArchivedViewToFullSize="NO" id="3aJ-CY-eSi" customClass="SlideToUnlockViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="center" id="wqN-l3-x6n" customClass="SlideToUnlockView">
+                        <rect key="frame" x="0.0" y="0.0" width="380" height="500"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Slide to unlock" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="St4-aC-89N">
+                                <rect key="frame" x="21" y="29" width="338" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.089818924669999994" green="0.3623662889" blue="0.56679594519999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="slideIndicator.png" id="BP9-qG-vR8" userLabel="Image View - slideIndicatorImageView">
+                                <rect key="frame" x="20" y="301" width="50" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="slideOverlayText.png" id="tlV-zF-VTD" userLabel="Image View - sliderOverlayText">
+                                <rect key="frame" x="20" y="301" width="338" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="slideToThis.png" id="Wem-Ao-mcB">
+                                <rect key="frame" x="297" y="307" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" continuous="NO" minimumValueImage="empty.png" maximumValueImage="empty.png" id="90W-0a-IIS">
+                                <rect key="frame" x="18" y="321" width="342" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="minimumTrackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="maximumTrackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="sliderChanged:" destination="3aJ-CY-eSi" eventType="valueChanged" id="kqO-5s-igR"/>
+                                    <action selector="sliderFinishedChanging:" destination="3aJ-CY-eSi" eventType="touchUpInside" id="NNF-Ab-WZP"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gGk-Dn-sED">
+                                <rect key="frame" x="21" y="436" width="339" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButtonAction:" destination="3aJ-CY-eSi" eventType="touchUpInside" id="Rsy-oo-pk6"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="thumb.png" id="06I-ex-haj">
+                                <rect key="frame" x="140" y="164" width="100" height="91"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="sliderOverlayImageView" destination="tlV-zF-VTD" id="AaP-q2-Ffi"/>
+                        </connections>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="cancelButton" destination="gGk-Dn-sED" id="ImQ-SB-pzd"/>
+                        <outlet property="feedbackImageView" destination="06I-ex-haj" id="fxj-7b-69z"/>
+                        <outlet property="slideIndicatorImageView" destination="BP9-qG-vR8" id="2y0-U2-7D3"/>
+                        <outlet property="slideToThisImageView" destination="Wem-Ao-mcB" id="4tZ-y0-yvo"/>
+                        <outlet property="slider" destination="90W-0a-IIS" id="PEg-Ib-SOa"/>
+                        <outlet property="sliderOverlayImageView" destination="tlV-zF-VTD" id="glC-Cx-xuj"/>
+                        <outlet property="titleLabel" destination="St4-aC-89N" id="hfj-Pk-HjV"/>
+                        <outlet property="view" destination="wqN-l3-x6n" id="FPY-I1-Ezf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xjb-GI-7G5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="906" y="193"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="empty.png" width="1" height="1"/>
+        <image name="slideIndicator.png" width="50" height="64"/>
+        <image name="slideOverlayText.png" width="339" height="62"/>
+        <image name="slideToThis.png" width="50" height="50"/>
+        <image name="thumb.png" width="100" height="96"/>
+    </resources>
+    <classes>
+        <class className="SlideToUnlockView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SlideToUnlockView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="sliderOverlayImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="SlideToUnlockViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SlideToUnlockViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelButtonAction:"/>
+                <relationship kind="action" name="sliderChanged:"/>
+                <relationship kind="action" name="sliderFinishedChanging:"/>
+                <relationship kind="outlet" name="cancelButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="feedbackImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="slideIndicatorImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="slideToThisImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="slider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="sliderOverlayImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showButtonAction:"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
